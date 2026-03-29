@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function Home() {
   const [form, setForm] = useState({ nombre: '', apellido: '', empresa: '' })
@@ -38,6 +39,37 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-black flex flex-col items-center justify-center px-4 py-16 relative overflow-hidden">
+      {/* Navbar */}
+      <nav className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 py-4 border-b border-yellow-500/10">
+        <div className="flex items-center gap-2">
+          <span className="text-xl" style={{ filter: 'drop-shadow(0 0 8px rgba(251,191,36,0.6))' }}>👑</span>
+          <span className="text-xs font-black tracking-widest uppercase text-gold-gradient">Denis</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/skills"
+            className="px-4 py-1.5 text-xs font-semibold tracking-widest uppercase rounded-lg transition-all duration-300 hover:-translate-y-0.5"
+            style={{
+              background: 'rgba(251,191,36,0.08)',
+              border: '1px solid rgba(251,191,36,0.2)',
+              color: 'rgba(251,191,36,0.7)',
+            }}
+          >
+            Ver skills ✦
+          </Link>
+          <Link
+            href="/noticias"
+            className="px-4 py-1.5 text-xs font-semibold tracking-widest uppercase rounded-lg transition-all duration-300 hover:-translate-y-0.5"
+            style={{
+              background: 'rgba(251,191,36,0.08)',
+              border: '1px solid rgba(251,191,36,0.2)',
+              color: 'rgba(251,191,36,0.7)',
+            }}
+          >
+            Noticias ◈
+          </Link>
+        </div>
+      </nav>
       {/* Background radial glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-yellow-500/5 blur-[120px]" />
